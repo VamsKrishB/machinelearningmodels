@@ -11,11 +11,9 @@ X, y = make_classification(n_samples=1000, n_features=20, n_informative=2, n_red
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Use LazyClassifier to fit and evaluate SVM and Logistic Regression
 clf = LazyClassifier(predictions=True, custom_metric=None)
 models, predictions = clf.fit(X_train, X_test, y_train, y_test)
 
-# Display the results for SVM and Logistic Regression
 svm_result = models.loc['SVC']
 logreg_result = models.loc['LogisticRegression']
 
